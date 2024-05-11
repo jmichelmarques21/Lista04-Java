@@ -74,7 +74,7 @@ public class Programa {
 
                 do {
                 System.out.println("--------------------------------");
-                System.out.println("1 - Criar reserva: ");
+                System.out.println("1 - Incluir reserva: ");
                 System.out.println("2 - Alterar reserva: ");
                 System.out.println("3 - Listar reserva");
                 System.out.println("4 - Excluir reserva");
@@ -82,12 +82,18 @@ public class Programa {
 
                 if (reservaOp == 1 ){
                     System.out.println("--------------------------------");
-                    System.out.println("Criar reserva");
+                    System.out.println("Incluir reserva");
                     reserva = new ReservaModel();
                     System.out.println();
+                    scan.nextLine();
                     System.out.println("Informe o nome do responsável pela reserva: ");
                     reserva.setNomeResponsavel(scan.nextLine());
                     System.out.println("Informe a quantidade de pessoas: ");
+                    reserva.setQuantPessoas(scan.nextInt());
+                    System.out.println("Informe a data: ");
+                    reserva.setData(scan.next());
+                    System.out.println("Informe o valor da reserva: ");
+                    reserva.setValorReserva(scan.nextDouble());
                 } else if (reservaOp == 2 ){
 
                 } else if (reservaOp == 3 ) {

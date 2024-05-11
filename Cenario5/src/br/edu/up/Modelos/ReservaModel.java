@@ -2,7 +2,7 @@ package br.edu.up.Modelos;
 
 public class ReservaModel {
   private String nomeResponsavel;
-  private String quantPessoas;
+  private int quantPessoas;
   private String data;
   private double valorReserva;
   public String getNomeResponsavel() {
@@ -11,10 +11,10 @@ public class ReservaModel {
   public void setNomeResponsavel(String nomeResponsavel) {
     this.nomeResponsavel = nomeResponsavel;
   }
-  public String getQuantPessoas() {
+  public int getQuantPessoas() {
     return quantPessoas;
   }
-  public void setQuantPessoas(String quantPessoas) {
+  public void setQuantPessoas(int quantPessoas) {
     this.quantPessoas = quantPessoas;
   }
   public String getData() {
