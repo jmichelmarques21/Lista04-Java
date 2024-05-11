@@ -3,25 +3,20 @@ package br.edu.up.Modelos;
 public class Estacionamento {
   private int capacidade;
   private Carro[] vagas;
-  private String periodo;
+  private int vagasOcupadas = 0;
+  protected int carrosSairam = 0;
 
-  public Estacionamento(int capacidade){
+  public Estacionamento(int capacidade) {
     this.capacidade = capacidade;
     this.vagas = new Carro[capacidade];
   }
 
-  public int vagaVazia(){
-    int vagasDisponiveis = 0;
-    for (Carro carro : vagas) {
-      if (carro == null) {
-        vagasDisponiveis++;
-      }
-    }
-    return vagasDisponiveis;
+  public Carro[] getVagas() {
+    return vagas;
   }
 
-  private int encontraVaga(){
-    for(int i = 0; i < capacidade; i++) {
+  public int vagaVazia() {
+    for (int i = 0; i < capacidade; i++) {
       if (vagas[i] == null) {
         return i;
       }
@@ -29,11 +24,14 @@ public class Estacionamento {
     return -1;
   }
 
-  public void estacionarCarro(Carro carro){
-    int vagaDisponivel = 0;
-    if (vagaDisponivel != -1){
+  public void estacionarCarro(Carro carro) {
+    int vagaDisponivel = vagaVazia();
+    if (vagaDisponivel != -1) {
       vagas[vagaDisponivel] = carro;
+      vagasOcupadas++;
       System.out.println("Veículo registrado!");
+      System.out.println("Vaga: " + (vagaDisponivel + 1));
+      System.out.println("Vagas restantes: " + (capacidade - vagasOcupadas));
     } else {
       System.out.println("Estacionamento lotado!");
     }
@@ -43,13 +41,13 @@ public class Estacionamento {
     for (int i = 0; i < capacidade; i++) {
       if (vagas[i] != null && vagas[i].getPlaca().equals(placa)) {
         vagas[i] = null;
+        vagasOcupadas--;
+        carrosSairam++;
         System.out.println("Saída registrada!");
-      } else {
-        System.out.println("Não foi possível localizar o carro pela placa!");
+        System.out.println("Vaga liberada: " + (i + 1));
+        System.out.println("Vagas restantes: " + (capacidade - vagasOcupadas));
+        break;
       }
     }
   }
-
-
-
 }
