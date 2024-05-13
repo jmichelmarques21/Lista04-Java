@@ -1,10 +1,11 @@
 package br.edu.up.Modelos;
 
 public class Estacionamento {
-  private int capacidade;
-  private Carro[] vagas;
-  private int vagasOcupadas = 0;
+  protected int capacidade;
+  protected Carro[] vagas;
+  protected int vagasOcupadas = 0;
   protected int carrosSairam = 0;
+  protected int carrosEntraram = 0;
 
   public Estacionamento(int capacidade) {
     this.capacidade = capacidade;
@@ -27,27 +28,32 @@ public class Estacionamento {
   public void estacionarCarro(Carro carro) {
     int vagaDisponivel = vagaVazia();
     if (vagaDisponivel != -1) {
-      vagas[vagaDisponivel] = carro;
-      vagasOcupadas++;
-      System.out.println("Veículo registrado!");
-      System.out.println("Vaga: " + (vagaDisponivel + 1));
-      System.out.println("Vagas restantes: " + (capacidade - vagasOcupadas));
+        vagas[vagaDisponivel] = carro;
+        vagasOcupadas++;
+        carrosEntraram++;
+        System.out.println("Veículo registrado!");
+        System.out.println("Vaga: " + (vagaDisponivel + 1));
+        System.out.println("Vagas restantes: " + (capacidade - vagasOcupadas));
     } else {
-      System.out.println("Estacionamento lotado!");
+        System.out.println("Estacionamento lotado!");
     }
-  }
+}
 
   public void removerCarro(String placa) {
+    boolean encontrado = false;
     for (int i = 0; i < capacidade; i++) {
       if (vagas[i] != null && vagas[i].getPlaca().equals(placa)) {
         vagas[i] = null;
         vagasOcupadas--;
-        carrosSairam++;
+        encontrado = true;
         System.out.println("Saída registrada!");
         System.out.println("Vaga liberada: " + (i + 1));
         System.out.println("Vagas restantes: " + (capacidade - vagasOcupadas));
         break;
       }
+    }
+    if (encontrado) {
+      carrosSairam++;
     }
   }
 }
