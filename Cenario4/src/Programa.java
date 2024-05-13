@@ -24,7 +24,7 @@ public class Programa {
                     registrarSaida(scanner, estacionamento);
                     break;
                 case 3:
-                    relatorio.emitirRelatorio();                    
+                    relatorio.emitirRelatorio();
                     break;
                 case 4:
                     System.out.println("Saindo do sistema...");
