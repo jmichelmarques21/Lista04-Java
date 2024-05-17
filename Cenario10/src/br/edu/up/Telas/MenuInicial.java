@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MenuInicial {
   Scanner scan = new Scanner(System.in);
 
-  public void menuInicial() {
+  public void Inicio() {
 
     System.out.println("-----------------------");
     System.out.println("1 - Incluir seguro: ");

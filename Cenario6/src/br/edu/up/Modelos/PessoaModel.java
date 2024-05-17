@@ -1,10 +1,8 @@
 package br.edu.up.Modelos;
 
-public class PessoaModel {
-  private String nome;
-  private String rg;
-
-
+public abstract class PessoaModel {
+  protected String nome;
+  protected String rg;
 
   
   public String getNome() {
@@ -19,6 +17,12 @@ public class PessoaModel {
   public void setRg(String rg) {
     this.rg = rg;
   }
+  @Override
+  public String toString() {
+    return "PessoaModel [nome=" + nome + ", rg=" + rg + "]";
+  }
+
+  
 
 
   

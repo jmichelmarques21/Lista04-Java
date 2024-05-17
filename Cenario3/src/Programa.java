@@ -8,7 +8,6 @@ public class Programa {
       Compromisso compromisso = new Compromisso("Jean", "Curitiba", "Trabalho", 20);
 
       Dia dia = new Dia(29);
-      dia.adicionarCompromisso(compromisso);
 
       Mes mes = new Mes(30, "Abril");
 

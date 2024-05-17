@@ -6,6 +6,8 @@ public class PassageiroModel extends PessoaModel{
 
 
   
+
+  
   public int getIdBagagem() {
     return idBagagem;
   }
@@ -18,8 +20,12 @@ public class PassageiroModel extends PessoaModel{
   public void setPassagem(int passagem) {
     this.passagem = passagem;
   }
-
-
-
-  
+  @Override
+  public String toString() {
+    return "Nome: " +  nome +
+    ", RG: " + rg +
+    ", idBagagem: " + idBagagem +
+    ", passagem: " + passagem +
+    ".";
+  }
 }
