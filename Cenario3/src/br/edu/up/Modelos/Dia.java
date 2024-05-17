@@ -8,10 +8,19 @@ public class Dia {
   public Dia(int diaMes){
     this.diaMes = diaMes;
   }
-
-  public Compromisso adicionarCompromisso(Compromisso compromisso) {
-    if (compromisso.getDia())
+  public int getDiaMes() {
+    return diaMes;
   }
+  public void setDiaMes(int diaMes) {
+    this.diaMes = diaMes;
+  }
+
+  public void adicionarCompromisso(Compromisso compromisso){
+
+  }
+
+
+
 
 
 
