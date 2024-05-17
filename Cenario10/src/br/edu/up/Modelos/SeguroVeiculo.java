@@ -1,6 +1,14 @@
 package br.edu.up.Modelos;
 
 public class SeguroVeiculo extends Seguro{
+
+
+
+  public SeguroVeiculo(String numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
+    super(numApolice, segurado, vlrApolice, dataInicio, dataFim);
+    //TODO Auto-generated constructor stub
+  }
+
   private double valorFranquia;
   private boolean temCarroReserva;
   private boolean cobreVidros;

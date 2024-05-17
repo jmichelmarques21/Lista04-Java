@@ -1,14 +1,26 @@
 package br.edu.up.Modelos;
 
 public class Segurado {
-  private String nome;
-  private String rg;
-  private String cpf;
-  private String sexo;
-  private String telefone;
-  private String endereco;
-  private String cep;
-  private String cidade;
+  protected String nome;
+  protected String rg;
+  protected String cpf;
+  protected String sexo;
+  protected String telefone;
+  protected String endereco;
+  protected String cep;
+  protected String cidade;
+
+
+  public Segurado(String nome, String rg, String cpf, String sexo, String telefone, String endereco, String cep, String cidade) {
+    this.nome = nome;
+    this.rg = rg;
+    this.cpf = cpf;
+    this.sexo = sexo;
+    this.telefone = telefone;
+    this.endereco = endereco;
+    this.cep = cep;
+    this.cidade = cidade;
+  }
   
 
 
