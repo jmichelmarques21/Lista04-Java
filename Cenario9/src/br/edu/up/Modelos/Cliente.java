@@ -1,66 +1,83 @@
-package br.edu.up.Modelos;
+package br.edu.up.modelos;
 
 public abstract class Cliente {
-  private String nome;
-  private String telefone;
-  private String email;
-  private String endereco;
-  private double vlrMaximoCredito;
-  private double vlrEmprestado;
-  public String getNome() {
-    return nome;
-  }
-  public void setNome(String nome) {
-    this.nome = nome;
-  }
-  public String getTelefone() {
-    return telefone;
-  }
-  public void setTelefone(String telefone) {
-    this.telefone = telefone;
-  }
-  public String getEmail() {
-    return email;
-  }
-  public void setEmail(String email) {
-    this.email = email;
-  }
-  public String getEndereco() {
-    return endereco;
-  }
-  public void setEndereco(String endereco) {
-    this.endereco = endereco;
-  }
-  public double getVlrMaximoCredito() {
-    return vlrMaximoCredito;
-  }
-  public void setVlrMaximoCredito(double vlrMaximoCredito) {
-    this.vlrMaximoCredito = vlrMaximoCredito;
-  }
-  public double getVlrEmprestado() {
-    return vlrEmprestado;
-  }
-  public void setVlrEmprestado(double vlrEmprestado) {
-    this.vlrEmprestado = vlrEmprestado;
-  }
+    private String nome;
+    private String telefone;
+    private String email;
+    private Endereco endereco;
+    private double vlrMaxCredito;
+    private double vlrEmprestado;
 
-  public double emprestar(){
-    return 0;
-  }
+    public Cliente(String nome, String telefone, String email, Endereco endereco, double vlrMaxCredito) {
+        this.nome = nome;
+        this.telefone = telefone;
+        this.email = email;
+        this.endereco = endereco;
+        this.vlrMaxCredito = vlrMaxCredito;
+        this.vlrEmprestado = 0;
+    }
 
-  public double devolver(){
-    return 0;
-  }
+    public String getNome() {
+        return nome;
+    }
 
-  public void getSaldo(){
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-  }
-  @Override
-  public String toString() {
-    return "Cliente [nome=" + nome + ", telefone=" + telefone + ", email=" + email + ", endereco=" + endereco
-        + ", vlrMaximoCredito=" + vlrMaximoCredito + ", vlrEmprestado=" + vlrEmprestado + "]";
-  }
+    public String getTelefone() {
+        return telefone;
+    }
 
-  
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public double getVlrMaxCredito() {
+        return vlrMaxCredito;
+    }
+
+    public void setVlrMaxCredito(double vlrMaxCredito) {
+        this.vlrMaxCredito = vlrMaxCredito;
+    }
+
+    public double getVlrEmprestado() {
+        return vlrEmprestado;
+    }
+
+    public void emprestar(double valor) {
+        if (vlrEmprestado + valor <= vlrMaxCredito) {
+            vlrEmprestado += valor;
+        } else {
+            System.out.println("Valor excede o limite de crédito.");
+        }
+    }
+
+    public void devolver(double valor) {
+        if (vlrEmprestado - valor >= 0) {
+            vlrEmprestado -= valor;
+        } else {
+            System.out.println("Valor a devolver excede o valor emprestado.");
+        }
+    }
+
+    public double getSaldo() {
+        return vlrMaxCredito - vlrEmprestado;
+    }
 }
