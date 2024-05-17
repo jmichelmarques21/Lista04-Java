@@ -65,7 +65,7 @@ public abstract class Cliente {
         if (vlrEmprestado + valor <= vlrMaxCredito) {
             vlrEmprestado += valor;
         } else {
-            System.out.println("Valor excede o limite de crédito.");
+            System.out.println("\nValor excede o limite de crédito.");
         }
     }
 
@@ -73,7 +73,7 @@ public abstract class Cliente {
         if (vlrEmprestado - valor >= 0) {
             vlrEmprestado -= valor;
         } else {
-            System.out.println("Valor a devolver excede o valor emprestado.");
+            System.out.println("\nValor a devolver excede o valor emprestado.");
         }
     }
 

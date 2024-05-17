@@ -37,7 +37,7 @@ public class ClientePessoa extends Cliente {
     }
 
     public String getDados() {
-        return "Nome: " + getNome() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nCPF: " + CPF + "\nPeso: " + peso + "\nAltura: " + altura;
+        return "\nNome: " + getNome() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nCPF: " + CPF + "\nPeso: " + peso + "\nAltura: " + altura;
     }
 
     @Override

@@ -37,7 +37,7 @@ public class ClienteEmpresa extends Cliente {
     }
 
     public String getDados() {
-        return "Nome: " + getNome() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nCNPJ: " + cnpj + "\nInscrição Estadual: " + inscEstadual + "\nAno de Fundação: " + anoFundacao;
+        return "\nNome: " + getNome() + "\nTelefone: " + getTelefone() + "\nEmail: " + getEmail() + "\nCNPJ: " + cnpj + "\nInscrição Estadual: " + inscEstadual + "\nAno de Fundação: " + anoFundacao;
     }
 
     @Override

@@ -27,7 +27,7 @@ public class Menu {
             System.out.println("9. Sair");
             System.out.print("\nEscolha uma opção: ");
             opcao = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -89,7 +89,7 @@ public class Menu {
         double peso = scanner.nextDouble();
         System.out.print("Altura(M): ");
         double altura = scanner.nextDouble();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         Endereco endereco = new Endereco(rua, numero, bairro, cep, new Cidade(cidade, UF));
         ClientePessoa cliente = new ClientePessoa(nome, telefone, email, endereco, CPF, peso, altura);
@@ -121,7 +121,7 @@ public class Menu {
         String inscEstadual = scanner.nextLine();
         System.out.print("Ano de Fundação: ");
         int anoFundacao = scanner.nextInt();
-        scanner.nextLine();  // Consume newline
+        scanner.nextLine();
 
         Endereco endereco = new Endereco(rua, numero, bairro, cep, new Cidade(cidade, UF));
         ClienteEmpresa cliente = new ClienteEmpresa(nome, telefone, email, endereco, cnpj, inscEstadual, anoFundacao);
@@ -157,7 +157,7 @@ public class Menu {
         if (cliente != null) {
             System.out.print("Valor a emprestar: ");
             double valor = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
             cliente.emprestar(valor);
         } else {
             System.out.println("\nCliente não encontrado.");
@@ -171,7 +171,7 @@ public class Menu {
         if (cliente != null) {
             System.out.print("Valor a emprestar: ");
             double valor = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
             cliente.emprestar(valor);
         } else {
             System.out.println("\nCliente não encontrado.");
@@ -185,7 +185,7 @@ public class Menu {
         if (cliente != null) {
             System.out.print("Valor a devolver: ");
             double valor = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
             cliente.devolver(valor);
         } else {
             System.out.println("\nCliente não encontrado.");
@@ -199,7 +199,7 @@ public class Menu {
         if (cliente != null) {
             System.out.print("Valor a devolver: ");
             double valor = scanner.nextDouble();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
             cliente.devolver(valor);
         } else {
             System.out.println("\nCliente não encontrado.");

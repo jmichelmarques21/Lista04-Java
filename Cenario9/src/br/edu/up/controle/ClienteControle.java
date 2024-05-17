@@ -20,7 +20,7 @@ public class ClienteControle {
         if (qtdClientesPessoa < clientesPessoa.length) {
             clientesPessoa[qtdClientesPessoa++] = cliente;
         } else {
-            System.out.println("Limite de clientes pessoa atingido.");
+            System.out.println("\nLimite de clientes pessoa atingido.");
         }
     }
 
@@ -28,7 +28,7 @@ public class ClienteControle {
         if (qtdClientesEmpresa < clientesEmpresa.length) {
             clientesEmpresa[qtdClientesEmpresa++] = cliente;
         } else {
-            System.out.println("Limite de clientes empresa atingido.");
+            System.out.println("\nLimite de clientes empresa atingido.");
         }
     }
 
