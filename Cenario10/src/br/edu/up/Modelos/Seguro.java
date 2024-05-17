@@ -1,12 +1,21 @@
 package br.edu.up.Modelos;
 
-import java.time.LocalDate;
-
-public abstract class Seguro {
+public class Seguro {
   private String numeroApolice;
   private Segurado segurado;
-  private LocalDate dataInicio;
-  private LocalDate dataFim;
+  private double vlrApolice;
+  private String dataInicio;
+  private String dataFim;
+
+  public Seguro(String numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
+    this.numeroApolice = numApolice;
+    this.segurado = segurado;
+    this.vlrApolice = vlrApolice;
+    this.dataInicio = dataInicio;
+    this.dataFim = dataFim;
+  }
+
+  
   public String getNumeroApolice() {
     return numeroApolice;
   }
@@ -19,21 +28,31 @@ public abstract class Seguro {
   public void setSegurado(Segurado segurado) {
     this.segurado = segurado;
   }
-  public LocalDate getDataInicio() {
+  public String getDataInicio() {
     return dataInicio;
   }
-  public void setDataInicio(LocalDate dataInicio) {
+  public void setDataInicio(String dataInicio) {
     this.dataInicio = dataInicio;
   }
-  public LocalDate getDataFim() {
+  public String getDataFim() {
     return dataFim;
   }
-  public void setDataFim(LocalDate dataFim) {
+  public void setDataFim(String dataFim) {
     this.dataFim = dataFim;
   }
 
   public String getDados(){
-    return "a";
+    return "Número da apólice: " + getNumeroApolice() +
+    "Nome do segurado: " + segurado.getNome() +
+    "Valor da apólice: " + getVlrApolice() +
+    "Data início: " +  getDataInicio() + 
+    "Data fim: " + getDataFim();
+  }
+  public double getVlrApolice() {
+    return vlrApolice;
+  }
+  public void setVlrApolice(double vlrApolice) {
+    this.vlrApolice = vlrApolice;
   }
 
 
