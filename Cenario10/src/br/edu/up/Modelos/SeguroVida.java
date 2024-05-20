@@ -7,23 +7,24 @@ public class SeguroVida extends Seguro {
 
   private boolean cobreDoenca;
   private boolean cobreAcidente;
+
   public boolean CobreDoenca() {
     return cobreDoenca;
   }
+
   public void setCobreDoenca(boolean cobreDoenca) {
     this.cobreDoenca = cobreDoenca;
   }
+
   public boolean CobreAcidente() {
     return cobreAcidente;
   }
+
   public void setCobreAcidente(boolean cobreAcidente) {
     this.cobreAcidente = cobreAcidente;
   }
 
-  public String getDados(){
+  public String getDados() {
     return "a";
   }
-
-  
-
 }

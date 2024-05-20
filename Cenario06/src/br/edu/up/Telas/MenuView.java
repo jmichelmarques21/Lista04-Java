@@ -40,7 +40,6 @@ public class MenuView {
 
       }
     } while (op != 5);
-    scan.close();
   }
 
 
@@ -73,7 +72,10 @@ public class MenuView {
   }
 
   public void listarPassageiro(){
-    System.out.println(passageiro.toString());
+    System.out.println("Nome do passageiro: " + passageiro.getNome());
+    System.out.println("RG do passageiro: " + passageiro.getRg());
+    System.out.println("Identificador da bagagem: " + passageiro.getIdBagagem());
+    System.out.println("Id da passagem: " + passageiro.getPassagem());
   }
 
   public void excluirPassageiro(){
