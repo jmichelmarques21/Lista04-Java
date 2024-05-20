@@ -1,13 +1,18 @@
 package br.edu.up.Modelos;
 
 public class Seguro {
-  private String numeroApolice;
+  private int numeroApolice;
   private Segurado segurado;
   private double vlrApolice;
   private String dataInicio;
   private String dataFim;
 
-  public Seguro(String numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
+
+  public Seguro(){
+
+  }
+
+  public Seguro(int numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
     this.numeroApolice = numApolice;
     this.segurado = segurado;
     this.vlrApolice = vlrApolice;
@@ -16,10 +21,10 @@ public class Seguro {
   }
 
   
-  public String getNumeroApolice() {
+  public int getNumeroApolice() {
     return numeroApolice;
   }
-  public void setNumeroApolice(String numeroApolice) {
+  public void setNumeroApolice(int numeroApolice) {
     this.numeroApolice = numeroApolice;
   }
   public Segurado getSegurado() {
@@ -42,11 +47,11 @@ public class Seguro {
   }
 
   public String getDados(){
-    return "Número da apólice: " + getNumeroApolice() +
-    "Nome do segurado: " + segurado.getNome() +
-    "Valor da apólice: " + getVlrApolice() +
-    "Data início: " +  getDataInicio() + 
-    "Data fim: " + getDataFim();
+    return "\n\nNúmero da apólice: " + getNumeroApolice() +
+    "\nNome do segurado: " + segurado.getNome() +
+    "\nValor da apólice: " + getVlrApolice() +
+    "\nData início: " +  getDataInicio() + 
+    "\nData fim: " + getDataFim();
   }
   public double getVlrApolice() {
     return vlrApolice;

@@ -1,7 +1,7 @@
 package br.edu.up.Modelos;
 
 public class SeguroVida extends Seguro {
-  public SeguroVida(String numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
+  public SeguroVida(int numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
     super(numApolice, segurado, vlrApolice, dataInicio, dataFim);
   }
 

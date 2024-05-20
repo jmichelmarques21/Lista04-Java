@@ -4,7 +4,7 @@ public class SeguroVeiculo extends Seguro{
 
 
 
-  public SeguroVeiculo(String numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
+  public SeguroVeiculo(int numApolice, Segurado segurado, double vlrApolice, String dataInicio, String dataFim) {
     super(numApolice, segurado, vlrApolice, dataInicio, dataFim);
     //TODO Auto-generated constructor stub
   }

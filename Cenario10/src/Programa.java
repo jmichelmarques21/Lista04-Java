@@ -11,8 +11,8 @@ public class Programa {
 
         MenuInicial menuInicial = new MenuInicial();
 
-        menuInicial.inicio();    
-
+        menuInicial.inicio();
+        
         scan.close();
     }
 }
