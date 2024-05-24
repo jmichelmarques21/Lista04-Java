@@ -15,16 +15,17 @@ public class Menu {
 
     public void exibirMenu() {
         int opcao = 0;
-        while (opcao != 9) {
+        while (opcao != 10) {
             System.out.println("\n1. Incluir cliente pessoa");
             System.out.println("2. Incluir cliente empresa");
             System.out.println("3. Mostrar dados cliente pessoa");
             System.out.println("4. Mostrar dados cliente empresa");
-            System.out.println("5. Emprestar para cliente pessoa");
-            System.out.println("6. Emprestar para cliente empresa");
-            System.out.println("7. Devolução de cliente pessoa");
-            System.out.println("8. Devolução de cliente empresa");
-            System.out.println("9. Sair");
+            System.out.println("5. Mostrar todos os clientes");
+            System.out.println("6. Emprestar para cliente pessoa");
+            System.out.println("7. Emprestar para cliente empresa");
+            System.out.println("8. Devolução de cliente pessoa");
+            System.out.println("9. Devolução de cliente empresa");
+            System.out.println("10. Sair");
             System.out.print("\nEscolha uma opção: ");
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -43,18 +44,21 @@ public class Menu {
                     mostrarDadosClienteEmpresa();
                     break;
                 case 5:
-                    emprestarClientePessoa();
+                    mostrarTodosClientes();
                     break;
                 case 6:
-                    emprestarClienteEmpresa();
+                    emprestarClientePessoa();
                     break;
                 case 7:
-                    devolverClientePessoa();
+                    emprestarClienteEmpresa();
                     break;
                 case 8:
-                    devolverClienteEmpresa();
+                    devolverClientePessoa();
                     break;
                 case 9:
+                    devolverClienteEmpresa();
+                    break;
+                case 10:
                     System.out.println("Saindo...");
                     break;
                 default:
@@ -127,6 +131,35 @@ public class Menu {
         ClienteEmpresa cliente = new ClienteEmpresa(nome, telefone, email, endereco, cnpj, inscEstadual, anoFundacao);
         controller.adicionarClienteEmpresa(cliente);
     }
+
+    private void mostrarTodosClientes() {
+        ClientePessoa[] clientesPessoa = controller.getClientesPessoa();
+        ClienteEmpresa[] clientesEmpresa = controller.getClientesEmpresa();
+    
+        System.out.println("\nClientes Pessoa:");
+        if (clientesPessoa != null) {
+            for (ClientePessoa cliente : clientesPessoa) {
+                if (cliente != null) {
+                    int i = 1;
+                    System.out.printf("\n->Cliente %d:", i);
+                    i++;
+                    System.out.println(cliente.toString());
+                }
+            }
+        }
+        System.out.println("\n----------------------------");
+        System.out.println("\nClientes Empresa:");
+        if (clientesEmpresa != null) {
+            for (ClienteEmpresa cliente : clientesEmpresa) {
+                if (cliente != null) {
+                    int i = 1;
+                    System.out.printf("\n->Empresa %d:", i);
+                    i++;
+                    System.out.println(cliente.toString());
+                }
+            }
+        }
+    } 
 
     private void mostrarDadosClientePessoa() {
         System.out.print("\nNome: ");

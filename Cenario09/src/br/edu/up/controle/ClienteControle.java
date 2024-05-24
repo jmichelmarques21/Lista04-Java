@@ -49,4 +49,18 @@ public class ClienteControle {
         }
         return null;
     }
+
+    public ClientePessoa[] getClientesPessoa() {
+        if (qtdClientesPessoa == 0) {
+            return new ClientePessoa[0];
+        }
+        return clientesPessoa;
+    }
+    
+    public ClienteEmpresa[] getClientesEmpresa() {
+        if (qtdClientesEmpresa == 0) {
+            return new ClienteEmpresa[0];
+        }
+        return clientesEmpresa;
+    }
 }
